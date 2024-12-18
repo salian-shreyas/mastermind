@@ -15,6 +15,14 @@ class Board
     end
   end
 
+  def update_feedback(feedback, loc)
+    self.board[current_round][:feedback_entry][loc] = feedback
+  end
+
+  def shuffle_feedback
+    self.board[current_round][:feedback_entry].shuffle!
+  end
+
   def display
     print "\n"
     board.each do |row|

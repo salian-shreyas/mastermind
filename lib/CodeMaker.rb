@@ -11,6 +11,6 @@ class CodeMaker
   attr_writer :code
 
   def make_code
-    COLORS.shuffle[0..4]
+    COLORS.shuffle[0..3]
   end
 end
