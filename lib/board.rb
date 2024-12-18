@@ -1,11 +1,18 @@
 class Board
-  attr_reader :board
+  attr_reader :board, :current_round
 
   def initialize
     self.board = Array.new(12) {{
       code_breaker_entry: Array.new(4, 'O'),
       feedback_entry: Array.new(4, 'o')
     }}
+    self.current_round = 0
+  end
+
+  def update_code(code)
+    code.each_with_index do |color, loc|
+      self.board[current_round][:code_breaker_entry][loc] = color
+    end
   end
 
   def display
@@ -23,5 +30,5 @@ class Board
   end
   
   private 
-  attr_writer :board
+  attr_writer :board, :current_round
 end
