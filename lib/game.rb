@@ -16,4 +16,9 @@ class Game
 
     @board.shuffle_feedback
   end
+
+  def correct_guess?
+    feedback_entry = @board.board[@board.current_round][:feedback_entry]
+    feedback_entry.all? {|feedback| feedback == 'r'}
+  end
 end
