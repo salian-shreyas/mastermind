@@ -5,6 +5,14 @@ class Game
     @code_breaker = code_breaker
   end
 
+  def get_secret_code
+    @code_maker.get_secret_code
+  end
+
+  def get_guess_code
+    @code_breaker.get_guess_code
+  end
+
   def give_feedback
     @code_breaker.code.each_with_index do |color, loc|
       if @code_maker.code[loc] == color          

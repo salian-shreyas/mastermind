@@ -1,11 +1,13 @@
 class CodeBreaker
-  attr_reader :code
+  def initialize(code_breaker)
+    @code_breaker = code_breaker
+  end
 
-  def get_code
-    puts "Enter code: "
-    self.code = gets.chomp.split(" ")
+  def get_guess_code
+    self.code_breaker.get_code
   end 
 
   private
-  attr_writer :code
+
+  attr_reader :code_breaker
 end

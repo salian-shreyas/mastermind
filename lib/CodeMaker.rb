@@ -1,16 +1,13 @@
 class CodeMaker
-  COLORS = ["R", "G", "B", "Y", "V", "P"]
+  def initialize(code_maker)
+    @code_maker = code_maker
+  end
 
-  attr_reader :code
-
-  def initialize
-    self.code = make_code
+  def get_secret_code
+    self.code_maker.get_code
   end
 
   private
-  attr_writer :code
 
-  def make_code
-    COLORS.shuffle[0..3]
-  end
+  attr_reader :code_maker
 end
