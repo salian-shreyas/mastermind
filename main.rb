@@ -9,9 +9,9 @@ human_player = Player.new
 computer_player = Computer.new
 board = Board.new
 
-puts "Hello welcome to mastermind!"
-puts "Enter 1 if wish to play as code-breaker"
-puts "Enter 2 if wish to play as code-maker: "
+puts 'Hello welcome to mastermind!'
+puts 'Enter 1 if wish to play as code-breaker'
+puts 'Enter 2 if wish to play as code-maker: '
 player_choice = gets.chomp.to_i
 
 if player_choice == 1
@@ -31,11 +31,11 @@ code_maker.get_secret_code
   game.provide_feedback
   board.display
 
-  puts "Code Breaker Won!!" if game.correct_guess?
+  puts 'Code Breaker Won!!' if game.correct_guess?
   board.increment_current_round
 end
 
 board.decrement_current_round
-puts "Code Maker Won!!" unless game.correct_guess?
+puts 'Code Maker Won!!' unless game.correct_guess?
 
-puts "Thank you for playing!"
+puts 'Thank you for playing!'

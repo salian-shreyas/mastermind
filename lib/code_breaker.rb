@@ -7,11 +7,11 @@ class CodeBreaker
   end
 
   def get_guess_code
-    self.guess_code = self.code_breaker.get_code
-  end 
+    self.guess_code = code_breaker.get_code
+  end
 
   private
 
   attr_reader :code_breaker
-  attr_writer :guess_code 
+  attr_writer :guess_code
 end

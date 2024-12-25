@@ -7,11 +7,11 @@ class CodeMaker
   end
 
   def get_secret_code
-    self.secret_code = self.code_maker.get_code
+    self.secret_code = code_maker.get_code
   end
 
   def provide_feedback(guess_code)
-    self.code_maker.provide_feedback(guess_code)
+    code_maker.provide_feedback(guess_code)
   end
 
   private

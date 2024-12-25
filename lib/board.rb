@@ -2,25 +2,27 @@ class Board
   attr_reader :board, :current_round
 
   def initialize
-    self.board = Array.new(12) {{
-      code_breaker_entry: Array.new(4, 'O'),
-      feedback_entry: Array.new(4, 'o')
-    }}
+    self.board = Array.new(12) do
+      {
+        code_breaker_entry: Array.new(4, 'O'),
+        feedback_entry: Array.new(4, 'o')
+      }
+    end
     self.current_round = 0
   end
 
   def update_code(code)
     code.each_with_index do |color, loc|
-      self.board[current_round][:code_breaker_entry][loc] = color
+      board[current_round][:code_breaker_entry][loc] = color
     end
   end
 
   def update_feedback(feedback, loc)
-    self.board[current_round][:feedback_entry][loc] = feedback
+    board[current_round][:feedback_entry][loc] = feedback
   end
 
   def shuffle_feedback
-    self.board[current_round][:feedback_entry].shuffle!
+    board[current_round][:feedback_entry].shuffle!
   end
 
   def display
@@ -29,7 +31,7 @@ class Board
       print "\n #{row[:feedback_entry][0]} #{row[:feedback_entry][1]} |"
 
       print "\n     |"
-      row[:code_breaker_entry].each {|space| print " #{space} "}
+      row[:code_breaker_entry].each { |space| print " #{space} " }
 
       print "\n #{row[:feedback_entry][2]} #{row[:feedback_entry][3]} |"
       print "\n-----+-----------"
@@ -44,7 +46,8 @@ class Board
   def decrement_current_round
     self.current_round -= 1
   end
-  
-  private 
+
+  private
+
   attr_writer :board, :current_round
 end
