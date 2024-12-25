@@ -9,7 +9,7 @@ class Player
   end
 
   def provide_feedback(guess_code)
-    puts "Guess code: #{guess_code}"
+    puts "Computer guess code: #{guess_code}"
     feedback = get_feedback
     validate_and_return_feedback(feedback)
   end
@@ -17,12 +17,13 @@ class Player
   private
 
   def get_input
-    print "Enter #{CODE_LENGTH} characters (#{VALID_CHARS.join(', ')}): "
+    print "Enter #{CODE_LENGTH} character secret code (#{VALID_CHARS.join(', ')}): "
     gets.chomp.upcase.split(" ")
   end
 
   def get_feedback
-    puts "Enter feedback characters (#{VALID_FEEDBACK_CHARS.join(', ')}) or skip if none: "
+    puts "Enter feedback"
+    puts "Enter 'r' for red and 'w' for white or skip if none: "
     gets.chomp.downcase.split(" ")
   end
   
@@ -57,7 +58,7 @@ class Player
   end
 
   def valid_feedback_chars?(feedback)
-    return true if input.all? { |char| VALID_FEEDBACK_CHARS.include?(char) }
+    return true if feedback.all? { |char| VALID_FEEDBACK_CHARS.include?(char) }
     puts "Invalid characters! Use only: #{VALID_FEEDBACK_CHARS.join(', ')}"
     false
   end

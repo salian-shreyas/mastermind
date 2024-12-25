@@ -36,6 +36,14 @@ class Board
     end
     print "\n\n"
   end
+
+  def increment_current_round
+    self.current_round += 1
+  end
+
+  def decrement_current_round
+    self.current_round -= 1
+  end
   
   private 
   attr_writer :board, :current_round
