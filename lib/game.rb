@@ -13,15 +13,11 @@ class Game
     @code_breaker.get_guess_code
   end
 
-  def give_feedback
-    @code_breaker.code.each_with_index do |color, loc|
-      if @code_maker.code[loc] == color          
-        @board.update_feedback('r', loc) 
-      elsif @code_maker.code.include? color
-        @board.update_feedback('w', loc) 
-      end
-    end  
-
+  def provide_feedback
+    feedback = @code_maker.provide_feedback(@code_breaker.guess_code)
+    feedback.each_with_index do |char, loc|
+      @board.update_feedback(char, loc)
+    end
     @board.shuffle_feedback
   end
 
