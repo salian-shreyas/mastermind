@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Manage the game board
 class Board
   attr_reader :board, :current_round
 

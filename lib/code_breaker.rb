@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Manage code-breaker functionalities
 class CodeBreaker
   attr_reader :guess_code
 

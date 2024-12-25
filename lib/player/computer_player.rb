@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# Manage computer-player functionalities
 class Computer
-  VALID_CHARS = %w[R G B Y V P]
+  VALID_CHARS = %w[R G B Y V P].freeze
 
   def initialize
     @secret_code = []

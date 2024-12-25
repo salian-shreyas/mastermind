@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative 'lib/board'
 require_relative 'lib/CodeBreaker'
 require_relative 'lib/CodeMaker'

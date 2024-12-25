@@ -1,6 +1,9 @@
+# frozen_string_literal: true
+
+# Manage human-player functionalities
 class Player
-  VALID_CHARS = %w[R G B Y V P]
-  VALID_FEEDBACK_CHARS = %w[r w]
+  VALID_CHARS = %w[R G B Y V P].freeze
+  VALID_FEEDBACK_CHARS = %w[r w].freeze
   CODE_LENGTH = 4
 
   def get_code

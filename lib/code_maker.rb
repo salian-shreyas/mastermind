@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Manage code-maker functionalities
 class CodeMaker
   attr_reader :secret_code
 

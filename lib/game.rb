@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# Control the game
 class Game
   def initialize(board, code_maker, code_breaker)
     @board = board
