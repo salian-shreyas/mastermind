@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 require_relative 'lib/board'
-require_relative 'lib/CodeBreaker'
-require_relative 'lib/CodeMaker'
+require_relative 'lib/code_breaker'
+require_relative 'lib/code_maker'
 require_relative 'lib/game'
-require_relative 'lib/player/computerPlayer'
-require_relative 'lib/player/humanPlayer'
+require_relative 'lib/player/computer_player'
+require_relative 'lib/player/human_player'
 
 human_player = Player.new
 computer_player = Computer.new
